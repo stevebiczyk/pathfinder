@@ -1,6 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { usePathfinder } from "../hooks/usePathfinder";
 import { MAX_COLS, MAX_ROWS } from "../utils/constants";
+import { Tile } from "./Tile";
 
 export function Grid() {
   const { grid } = usePathfinder();
@@ -20,10 +21,26 @@ export function Grid() {
         }px] w-[${MAX_COLS * 7}px]`
       )}
     >
-      {grid.map((row, rowIndex) => (
+      {grid.map((r, rowIndex) => (
         <div key={rowIndex} className="flex">
-          {row.map((tile, tileIndex) => {
-            <div className="bg-white h-2 w-2 border" />;
+          {r.map((tile, tileIndex) => {
+            const { row, col, isEnd, isStart, isPath, isTraversed, isWall } =
+              tile;
+            return (
+              <Tile
+                key={tileIndex}
+                row={tile.row}
+                col={tile.col}
+                isEnd={isEnd}
+                isStart={isStart}
+                isPath={isPath}
+                isTraversed={isTraversed}
+                isWall={isWall}
+                handleMouseDown={() => handleMouseDown(row, col)}
+                handleMouseUp={() => handleMouseUp(row, col)}
+                handleMouseEnter={() => handleMouseEnter(row, col)}
+              />
+            );
           })}
         </div>
       ))}

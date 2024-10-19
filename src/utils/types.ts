@@ -13,10 +13,11 @@ export type TileType = {
   isStart: boolean;
   isWall: boolean;
   isPath: boolean;
+  isTraversed: boolean;
   distance: number;
   parent: TileType | null;
 };
 
 export type GridType = TileType[][];
 
-export type SpeedType = "slow" | "medium" | "fast";
+export type SpeedType = 2 | 1 | 0.5;
