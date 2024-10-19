@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { SpeedType } from "../utils/types";
 
 interface SpeedContextInterface {
@@ -11,7 +11,7 @@ export const SpeedContext = createContext<SpeedContextInterface | undefined>(
 );
 
 export const SpeedProvider = ({ children }: { children: ReactNode }) => {
-  const [speed, setSpeed] = useState<SpeedType>(50);
+  const [speed, setSpeed] = useState<SpeedType>("medium");
   return (
     <SpeedContext.Provider value={{ speed, setSpeed }}>
       {children}

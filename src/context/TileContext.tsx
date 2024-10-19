@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import { TileType } from "../utils/types";
+import { END_TILE_CONFIG, START_TILE_CONFIG } from "../utils/constants";
 
 interface TileContextInterface {
   startTile: TileType;
