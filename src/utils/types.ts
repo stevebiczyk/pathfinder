@@ -1,10 +1,10 @@
 export type AlgorithmType = "dijkstra" | "aStar" | "bfs" | "dfs";
 
-export type MazeType =
-  | "none"
-  | "binary_tree"
-  | "recursiveDivision"
-  | "randomMaze";
+export type MazeType = "NONE" | "BINARY_TREE" | "RECURSIVE_DIVISION";
+export interface MazeSelectType {
+  name: string;
+  value: MazeType;
+}
 
 export type TileType = {
   row: number;
