@@ -1,11 +1,29 @@
+import { useState } from "react";
 import { usePathfinder } from "../hooks/usePathfinder";
+import { useTile } from "../hooks/useTile";
 import { MAZES } from "../utils/constants";
+import { resetGrid } from "../utils/resetGrid";
 import { MazeType } from "../utils/types";
 import { Select } from "./Select";
 
 export function Nav() {
+  const [isDisabled, setIsDisabled] = useState(false);
+  const { maze, setMaze, grid } = usePathfinder();
+  const { startTile, endTile } = useTile();
+
+  const handleGenerateMaze = (maze: MazeType) => {
+    // Add logic to generate maze
+    if (maze === "NONE") {
+      setMaze(maze);
+      resetGrid({ grid, startTile, endTile });
+      return;
+    }
+    setMaze(maze);
+    setIsDisabled(true);
+    //runMazeAlgorithm(maze);
+  };
+
   return (
-    const { maze, handleGenerateMaze, isDisabled } = usePathfinder();
     <div className="flex-items-center justify-center min-h-[4.5rem] border-b shadow-gray-600 sm:px px-0">
       <div className="flex-items-center lg:justify-between juster-center w-full sm:w-[52rem]">
         <h1 className="lg:flex hidden w-[40%] text-2xl pl-1">
@@ -18,7 +36,7 @@ export function Nav() {
             options={MAZES}
             isDisabled={isDisabled}
             onChange={(e) => {
-              //handleGenerateMaze(e.target.value as MazeType);
+              handleGenerateMaze(e.target.value as MazeType);
             }}
           />
         </div>
