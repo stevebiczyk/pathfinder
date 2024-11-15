@@ -51,3 +51,17 @@ export const createNewGrid = (
 export const isEqual = (t1: TileType, t2: TileType) => {
   return t1.row === t2.row && t1.col === t2.col;
 };
+
+export const isRowColEqual = (row: number, col: number, tile: TileType) => {
+  return row === tile.row && col === tile.col;
+};
+
+export const sleep = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+export const getRandInt = (min: number, max: number) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor((Math.random() = max - min + min));
+};

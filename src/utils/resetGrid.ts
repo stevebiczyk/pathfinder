@@ -30,16 +30,17 @@ export const resetGrid = ({
         const tileElement = document.getElementById(`${tile.row}-${tile.col}`);
 
         if (tileElement) {
-            tileElement.className = TILE_STYLE;
+          tileElement.className = TILE_STYLE;
         }
 
         if (tile.row === MAX_ROWS - 1) {
-            tileElement?.classList.add("border-b");
+          tileElement?.classList.add("border-b");
         }
 
         if (tile.col === 0) {
-            tileElement?.classList.add("border-l");
+          tileElement?.classList.add("border-l");
         }
+      }
     }
   }
 };
