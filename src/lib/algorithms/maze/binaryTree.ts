@@ -8,7 +8,7 @@ export const binaryTree = async (
   grid: GridType,
   startTile: TileType,
   endTile: TileType,
-  setIsDisabled: (boolean) => void,
+  setIsDisabled: (isDisabled: boolean) => void,
   speed: SpeedType
 ) => {
   createWall(startTile, endTile, speed);
@@ -30,10 +30,10 @@ export const binaryTree = async (
       if (row === MAX_ROWS - 2 && col === MAX_COLS - 2) {
         // Skip the bottom-right corner
         continue;
-      } else if (r === MAX_ROWS - 2) {
+      } else if (row === MAX_ROWS - 2) {
         // If it's the last row, destroy a wall to the right
         await destroyWall(grid, row, col, 1, speed);
-      } else if (c === MAX_COLS - 2) {
+      } else if (col === MAX_COLS - 2) {
         // If it's the last column, destroy a wall below
         await destroyWall(grid, row, col, 0, speed);
       } else {

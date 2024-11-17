@@ -23,7 +23,7 @@ export function Nav() {
     }
     setMaze(maze);
     setIsDisabled(true);
-    runMazeAlgorithm(maze, grid, startTile, endTile, setIsDisabled, speed);
+    runMazeAlgorithm({ maze, grid, startTile, endTile, setIsDisabled, speed });
   };
 
   return (

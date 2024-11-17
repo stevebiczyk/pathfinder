@@ -16,7 +16,7 @@ export const runMazeAlgorithm = async ({
   setIsDisabled: (isDisabled: boolean) => void;
   speed: SpeedType;
 }) => {
-  if (maze === "BINARY_TREE") {
+  if (maze == "BINARY_TREE") {
     await binaryTree(grid, startTile, endTile, setIsDisabled, speed);
   }
 };
