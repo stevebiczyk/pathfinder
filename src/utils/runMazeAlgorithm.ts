@@ -1,4 +1,5 @@
 import { binaryTree } from "../lib/algorithms/maze/binaryTree";
+import { constructBorder } from "./constructBorder";
 import { GridType, MazeType, SpeedType, TileType } from "./types";
 
 export const runMazeAlgorithm = async ({
@@ -18,5 +19,7 @@ export const runMazeAlgorithm = async ({
 }) => {
   if (maze == "BINARY_TREE") {
     await binaryTree(grid, startTile, endTile, setIsDisabled, speed);
+  } else if (maze == "RECURSIVE_DIVISION") {
+    await constructBorder(grid, startTile, endTile);
   }
 };
