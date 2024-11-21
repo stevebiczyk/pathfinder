@@ -33,7 +33,7 @@ export async function constructBorder(
         !isEqual(grid[row][col], endTile)
       ) {
         grid[row][col].isWall = true;
-        const tileElement = document.getElementById(`tile-${row}-${col}`);
+        const tileElement = document.getElementById(`${row}-${col}`);
         if (tileElement) {
           tileElement.classList.add(
             ...WALL_TILE_STYLE.split(" "),

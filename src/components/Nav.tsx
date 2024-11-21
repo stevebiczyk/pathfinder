@@ -27,7 +27,7 @@ export function Nav() {
     runMazeAlgorithm({ maze, grid, startTile, endTile, setIsDisabled, speed });
     const newGrid = grid.slice();
     setGrid(newGrid);
-    setIsGraphVisualized = false;
+    setIsGraphVisualized(false);
   };
 
   return (

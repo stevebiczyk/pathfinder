@@ -41,7 +41,7 @@ export const MAZES: MazeSelectType[] = [
   { name: "Recursive Division", value: "RECURSIVE_DIVISION" },
 ];
 
-export const Speeds: SpeedSelectType[] = [
+export const SPEEDS: SpeedSelectType[] = [
   { name: "Slow", value: 2 },
   { name: "Medium", value: 1 },
   { name: "Fast", value: 0.5 },
