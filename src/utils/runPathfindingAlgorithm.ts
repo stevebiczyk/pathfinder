@@ -1,3 +1,4 @@
+import { bfs } from "../lib/algorithms/pathfinding/bfs";
 import { AlgorithmType, GridType, TileType } from "./types";
 
 export const runPathfindingAlgorithm = ({
@@ -13,10 +14,8 @@ export const runPathfindingAlgorithm = ({
 }) => {
   switch (algorithm) {
     case "BFS":
-      console.log("Running BFS");
-      return;
+      return bfs(grid, startTile, endTile);
     default:
-      console.log("Invalid algorithm");
-      return;
+      return bfs(grid, startTile, endTile);
   }
 };
