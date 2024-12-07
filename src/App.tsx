@@ -12,7 +12,7 @@ export default function App() {
       <TileProvider>
         <SpeedProvider>
           <div className="h-screen w-screen flex flex-col">
-            <Nav />
+            <Nav isVisualizerRunningRef={isVisualizerRunningRef} />
             <Grid isVisualizerRunningRef={isVisualizerRunningRef} />
           </div>
         </SpeedProvider>
